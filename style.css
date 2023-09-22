@@ -638,8 +638,8 @@ li {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
+  margin-top: -1rem;
 }
-
 
 .courses-grid .course-col {
   width: 100%;
