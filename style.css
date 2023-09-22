@@ -264,15 +264,18 @@ li {
   background: #7ec5f1;
 }
 
-.personal-menu .menu-list li.a i {
+.personal-menu .menu-list li i {
   display: inline-block;
   position: absolute;
   left: 0px;
   top: 10px;
   width: 3px;
   height: 32px;
-  background: #7ec5f1;
   vertical-align: middle;
+}
+
+.personal-menu .menu-list li.a i {
+  background: #7ec5f1;
 }
 
 .menu-list .disabled a {
