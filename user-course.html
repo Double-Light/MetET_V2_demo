@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .coursebox:hover .hover {
+        display: block
+      }
+
+      .coursebox:hover {
+        background-color: #f8f9fa
+      }
+
+      .hover {
+        display: none
+      }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./circliful.css">
+  </head>
+
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row py-3">
+          <div class="col-xl-3">
+            <div class="card-media personal-card">
+              <a href="#個人資訊" title="雲寶" target="_blank">
+                <img src="https://ck101.tw/uc_server/images/noavatar_big.gif" width="80" height="80" title="雲寶" alt="" style="border-radius:50%">
+              </a>
+              <div class="presonal-info">
+                <a href="#個人資訊" class="author-name" target="_blank" title="使用者名稱" style="font-size:18px">雲寶</a>
+              </div>
+              <div class="position-info">
+                <span title="身分">預報中心</span>
+              </div>
+              <div class="info-num">
+                <div class="coursecounts">
+                  <p>完成課程數</p>
+                  <a href="./user-course.html" title="共完成42門課程" style="text-decoration:none">42</a>
+                </div>
+                <div class="sitehours">
+                  <p>網站停留時數</p>
+                  <a href="./user-stats.html" title="累積停留172小時" style="text-decoration:none">172</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-media personal-menu mb-3">
+              <ul class="menu-list">
+                <li>
+                  <i></i>
+                  <a href="./user-info.html">個人資訊</a>
+                </li>
+              </ul>
+              <ul class="menu-list">
+                <li class="a">
+                  <i></i>
+                  <a href="./user-course.html">我選修的課程</a>
+                </li>
+                <li class="disabled">
+                  <i></i>
+                  <a href="./user-teach.html">我授課的課程</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-programs.html">我選修的微學程</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-stats.html">修課綜覽</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-preferences.html">偏好設定</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-9">
+            <div class="box">
+              <div>
+                <h3>我選修的課程</h3>
+                <p>56 門課程 | 已完成：42門課程</p>
+              </div>
+            </div>
+            <div class="box">
+              <div class="courses-list mytocl-courses-list">
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=205" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/3232/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-17.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="窺探2019夏季氣候－從影響東亞與西北太平洋夏季氣候的動力機制談起">
+                      <a href="https://metet.cwa.gov.tw/course/view.php?id=205" target="_blank">窺探2019夏季氣候－從影響東亞與西北太平洋夏季氣候的動力機制談起</a>
+                    </div>
+                    <div class="course-Info">
+                      <p>本課程主要介紹影響東亞及西北太平洋夏季氣候的動力機制與不同尺度間的交互作用，以及對氣候變異度的貢獻。最後以最近幾年夏季為例，診斷造成極端或異常氣候事件的可能因素。</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="205-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151671"><input type="hidden" name="enrolid" value="795"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=182" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/1933/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%96-11.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="熱帶氣旋之定位與強度估計"><a href="https://metet.cwa.gov.tw/course/view.php?id=182" target="_blank">熱帶氣旋之定位與強度估計</a>
+                    </div>
+                    <div class="course-Info">
+                      <p>本課程將利用口授與互動式教學方式提供預報人員利用衛星影像辨識熱帶氣旋並善用衛星資源，建立基本之熱帶氣旋中心定位與強度估計技巧。內容包括:</p>
+                      <p></p>
+                      <ul>
+                        <li>氣旋類型、來源與移動</li>
+                        <li>Dvorak 熱帶氣旋中心定位與強度估計法</li>
+                        <li>常見熱帶氣旋的雲型</li>
+                        <li>眼型颱風之強度估計與調整</li>
+                        <li>熱帶氣旋之CI值與T值之關係</li>
+                        <li>衛星資料估計熱帶氣旋之電碼</li>
+                        <li>其他衛星資源估計颱風中心與強度</li>
+                        <li>熱帶氣旋中心定位與強度估計實例</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">80.00</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="182-2" class="bi bi-heart" style="color: red;"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=181" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/1919/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%96-12.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="衛星影像與天氣系統之分析應用"><a href="https://metet.cwa.gov.tw/course/view.php?id=181" target="_blank">衛星影像與天氣系統之分析應用</a>
+                    </div>
+                    <div class="course-Info">
+                      <p>本課程將利用口授與互動式教學方式提供預報人員基本衛星觀測原理與影像辨識技巧，並應用於日常天氣系統之分析與研判。內容包括:</p>
+                      <ul>
+                        <li>衛星觀測原理與觀測資源</li>
+                        <li>天氣系統的發展與演化</li>
+                        <li>衛星影像基本判讀<br></li>
+                        <li>影響台灣四季變化之天氣系統</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="181-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/self/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151672"><input type="hidden" name="enrolid" value="698"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=327" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/8724/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-59.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="2023梅雨季教育訓練"><a href="https://metet.cwa.gov.tw/course/view.php?id=327" target="_blank">2023梅雨季教育訓練</a>
+                    </div>
+                    <div class="course-Info">
+                      <p><b>本課程僅供預報中心同仁選課</b><br></p>
+                      <p>本課程為預報中心於梅雨季季前針對預報員進行的教育訓練，今年的課程包含梅雨實務訓練與梅雨監測指標介紹及應用。</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">- -</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="327-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151673"><input type="hidden" name="enrolid" value="1306"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=301" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/6963/course/overviewfiles/IBF_thumbnail%20%28Chinese%29.jpg" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="臺灣颱風災害風險溝通：應用「衝擊預警」方法(中文版)"><a href="https://metet.cwa.gov.tw/course/view.php?id=301" target="_blank">臺灣颱風災害風險溝通：應用「衝擊預警」方法(中文版)</a>
+                    </div>
+                    <div class="course-Info">
+                      <p>本線上課程向學習者介紹了衝擊預警和預警服務方法來評估天氣事件的風險。在回顧了該方法的步驟後，學習者將藉由兩個曾影響臺灣的麥德姆颱風模擬中學會如何使用該方法。在模擬練習中，學習者必須決定與即將來臨的風暴相關的天氣災害的可能性和潛在嚴重性。然後，學習者必須創建描述風暴最突出危害的潛在風險和影響的資訊。 2023年新增 IBF介紹及預報中心未來規劃</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="301-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151674"><input type="hidden" name="enrolid" value="1184"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=328" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/8758/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-78.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="2023年氣象站回饋報告(上)_「山區暴雨背景資料評估」及「外島霧的統計特性」"><a href="https://metet.cwa.gov.tw/course/view.php?id=328" target="_blank">2023年氣象站回饋報告(上)_「山區暴雨背景資料評估」及「外島霧的統計特性」</a>
+                    </div>
+                    <div class="course-Info">
+                      <p><b>本課程僅供預報中心同仁選課</b><br></p>
+                      <p>本課程為<span style="font-size:14.44px;">2023年上半年氣象站專題報告，本島縣市進行山區暴雨高風</span><span style="font-size:14.44px;">險溪流遊憩區背景資料評估、外島縣市進行當地霧的統計特性簡介。</span></p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">- -</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="328-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151675"><input type="hidden" name="enrolid" value="1310"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=322" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/8362/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-72.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="TSWP臺灣劇烈天氣實驗預報產品展示頁面及AI技術介紹"><a href="https://metet.cwa.gov.tw/course/view.php?id=322" target="_blank">TSWP臺灣劇烈天氣實驗預報產品展示頁面及AI技術介紹</a>
+                    </div>
+                    <div class="course-Info">
+                      <p><b>本課程僅供預報中心同仁選課</b><br></p>
+                      <p>講題內容為介紹TSWP網頁(臺灣劇烈天氣實驗預報產品展示頁面)及相關AI使用技術。</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="322-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151676"><input type="hidden" name="enrolid" value="1286"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=320" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/8301/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-71.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="2022年氣象站回饋報告_各縣市氣候特徵"><a href="https://metet.cwa.gov.tw/course/view.php?id=320" target="_blank">2022年氣象站回饋報告_各縣市氣候特徵</a>
+                    </div>
+                    <div class="course-Info">
+                      <p><b>本課程僅供預報中心同仁選課</b><br></p>
+                      <p>本課程為2022年下半年氣象站專題報告，介紹各縣市之氣候特徵<br></p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="320-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/waiting/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151677"><input type="hidden" name="enrolid" value="1276"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=318" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7664/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-70.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="NSHARP探空圖表、參數升級簡介與實務應用"><a href="https://metet.cwa.gov.tw/course/view.php?id=318" target="_blank">NSHARP探空圖表、參數升級簡介與實務應用</a>
+                    </div>
+                    <div class="course-Info">
+                      <p>NSHARP 是美國風暴預報中心 (SPC) 和航空氣象中心 (AWC) 預報員用來顯示 Skew-T 圖、風徑圖和各種穩定性指數的工具，由 NCEP 開發人員轉移到 AWIPS II 的「插件軟體」，成為AWIPS可視化環境 (CAVE) 的組成部分，它具有迅速顯示出多樣大氣動力學及熱力學物理穩定性指數和圖表的功能。本次報告的重點是聚焦在介紹NSHARP穩定性指數和探空圖表簡介及在天氣分析與預報作業之實務應用。</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="318-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/self/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151678"><input type="hidden" name="enrolid" value="1267"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="coursebox">
+                  <div class="course-image">
+                    <a href="https://metet.cwa.gov.tw/course/view.php?id=265" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                        <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/4860/course/overviewfiles/MetET%E8%AA%B2%E7%A8%8B%E5%9C%962-45.png" width="100%" height="100%"></image>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="course-body">
+                    <div class="course-title" title="颱風季預報教育訓練"><a href="https://metet.cwa.gov.tw/course/view.php?id=265" target="_blank">颱風季預報教育訓練</a>
+                    </div>
+                    <div class="course-Info">
+                      <p><b>本課程僅供預報中心同仁選課</b></p>
+                      <p>本課程為預報中心於颱風季前進行的颱風預報教育訓練課程，主要介紹颱風接近臺灣時分析颱風中心的工具、以及颱風可能伴隨的路徑、結構變化，並說明各席位於颱風期間的職掌與額外工作項目。</p>
+                      <p>2021年新增測驗<br>2022年新增該年度訓練</p>
+                    </div>
+                  </div>
+                  <div class="mytoc-block">
+                    <div class="mytoc-status">
+                      <div>課程完成狀態</div>
+                      <p style="font-weight: bold;">X</p>
+                    </div>
+                    <div class="mytoc-action">
+                      <div class="favorite"><i id="265-2" class="bi bi-heart" style="color: red;"></i></div>
+                      <div class="singlebutton">
+                        <form method="post" action="https://metet.cwa.gov.tw/enrol/manual/unenrolself.php">
+                          <div><input type="submit" value="退選" id="single_button64ffbbcb151679"><input type="hidden" name="enrolid" value="1036"><input type="hidden" name="confirm" value="1"><input type="hidden" name="sesskey" value="NvEtjVJje3"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" style="margin-right:.75rem">上一頁</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item" style="margin-left:.75rem">
+                    <a class="page-link" href="#">下一頁</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

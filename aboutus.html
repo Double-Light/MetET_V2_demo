@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+
+    <!-- CSS 檔 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- 自訂義 CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+
+    <!-- JS 檔 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="https://mytube.ncku.edu.tw/js/bootstrap-treeview.js"></script> -->
+
+  </head>
+
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row py-3">
+          <div class="col">
+            <div class="box">
+              <div class="">
+                <h2 class="text-center">關於我們</h2>
+              </div>
+            </div>
+            <div class="box">
+              <div class="container-fluid">
+                <p><b></b></p>
+                <h4><b>建站歷史 History</b></h4>
+                <h5 dir="ltr"><span><span>教育訓練為培養專業氣象預報員不可或缺的一環，並在氣象專業的知識領域，作業單位常與學術單位有不同的學習目標及需求；為了有效地累積預報員之經驗與教材，教育訓練方式亦需要與時俱進。</span></span></h5>
+                <h5><span><span>中央氣象局（以下簡稱本局）近年致力於發展數位化氣象預報教材，2016年與美國大學大氣研究聯盟(University Corporation for Atmospheric Research, UCAR)之COMET團隊合作，建立一「<a href="https://www.meted.ucar.edu/training_module.php?id=1308">臺灣颱風定量降水預報</a>」之中/英文線上教材，其成果廣受好評。</span><span><br></span>2017年，除再度與UCAR合作發展「<a href="https://www.meted.ucar.edu/training_module.php?id=1357#.Wsy8HZOuzBI">梅雨鋒面I:豪雨的解析及臺灣梅雨預報</a>」之外，本局亦舉辦第一屆＂氣象A2O－梅雨論壇＂，會中便提出本局將發展一氣象預報培訓平台，以滿足本局氣象預報作業之教育訓練需求，並能整合臺灣氣象作業與學術的資源，推動臺灣氣象相關培訓計畫發展。<br>期待透過MetET的建立，及教育訓練方式與教材的精進，不但能提升專業預報員的養成過程，同時亦可與相關作業單位及學界共享學習資源，帶動及展現臺灣氣象科研成果。</span></h5><span></span>
+                <h5 dir="ltr">2018年4月，氣象預報培訓平台 (Meteorological Education and Training，簡稱MetET) 與第二屆“氣象A2O-氣象培訓者研討會” 同步上線。本網站宗旨為針對有氣象預報實務培訓需求的使用者，提供高品質的線上學習教材。</h5>
+                <h5 dir="ltr"></h5>
+                <h5>本網站目前公開課程，主要挑選&nbsp;<a href="http://comet.ucar.edu/"><span>UCAR/COMET</span></a><span>&nbsp;</span>的&nbsp;<a href="https://www.meted.ucar.edu/"><span>MetEd</span></a><span>&nbsp;</span>網站上，與臺灣較為相關的課程，並將課程介紹中文化；目前有些本土課程因牽涉內部作業，暫不公開，敬請見諒，未來將持續編列本土通識課程，供外界使用者學習。</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

@@ -1,0 +1,1369 @@
+/* #### 全站樣式 ####*/
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  /* font-family: PingFang TC,微軟正黑體,sans-serif; */
+  /* font-family: Open Sans,sans-serif !important; */
+  line-height: normal;
+  color: #545251;
+  background-color: #f1f2f4;
+  font: 1rem "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+footer {
+  /* background-color: #ddedf6 !important;	 */
+}
+
+.container {
+  /* padding-top: 12px; */
+  max-width: 1240px !important;
+  min-width: 720px !important;
+}
+
+.container-fluid {
+  max-width: 1240px;
+}
+
+h2 {
+  /* line-height: 40px; */
+  text-align: center;
+  font-weight: 700;
+  color: #1d65a6;
+}
+
+h3 {
+  /* line-height: 40px; */
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul,
+li {
+  padding-left: 0px;
+  /* list-style-type: none; */
+}
+
+.remove-link-mark {
+  text-decoration: none;
+}
+
+.box {
+  background: #fff;
+  border-radius: 8px;
+  border: 0;
+  -webkit-box-shadow: 0 0 2px 0 rgb(98 124 153 / 10%);
+  -moz-box-shadow: 0 0 2px 0 rgba(98, 124, 153, .1);
+  box-shadow: 0 0 2px 0 rgb(98 124 153 / 10%);
+  -webkit-transition: all .6s ease;
+  -moz-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.accordion .box {
+  padding: 12px 12px;
+  margin: 48px 0;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+/* 色調 */
+
+.bg-primary {
+  background-color: #1d65a6 !important;
+}
+
+.bg-light {
+  background-color: #ddedf6 !important;
+}
+
+.text-primary {
+  color: #1d65a6 !important;
+}
+
+/* 表格樣式 */
+.table-striped thead tr {
+  --bs-table-accent-bg: #FAFAFA;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  --bs-table-accent-bg: #FAFAFA;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  --bs-table-accent-bg: #fff;
+}
+
+/* 分頁按鈕 */
+.page-item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.page-link {
+  border-radius: 0.375rem;
+}
+
+
+
+/* #### 頁首樣式 ####*/
+
+/* 導覽列*/
+.navbar-nav {
+  font-size: 0.875rem;
+}
+
+
+/* #### 首頁樣式 ####*/
+
+/* 首頁-關鍵字標籤 */
+#HotTags-collapse a {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* slider */
+#main-slider {
+  margin-bottom: 0.75rem;
+}
+
+.carousel-inner {
+  -webkit-box-shadow: 0 0 6px #424242;
+  box-shadow: 0 0 6px #424242;
+}
+
+/* 下拉式選單 menu 寬度 */
+.dropdown-menu {
+  min-width: 100%;
+}
+
+.btn-group select {
+  text-align: left;
+  border-color: #ced4da;
+}
+
+
+@media (max-width: 992px) {
+  #login-button {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 0px !important;
+  }
+}
+
+.card-header {
+  margin: 0.25rem 1rem;
+  background-color: #fff;
+}
+
+
+
+
+/* #### 個人資訊 左側區塊 樣式 ####*/
+
+.card-media {
+  min-width: 210px;
+}
+
+.personal-card {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 30px 0 20px 0;
+}
+
+.personal-card,
+.personal-menu {
+  background: #ffffff;
+  border-radius: 4px;
+  /* border: 1px solid #eaeaea; */
+  overflow: hidden;
+}
+
+.personal-card a,
+.personal-menu a {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.personal-card .position-info {
+  margin-bottom: 24px;
+}
+
+.personal-card .info-num .coursecounts,
+.personal-card .info-num .sitehours {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+.personal-card .info-num .coursecounts {
+  position: relative;
+}
+
+/* 完成課程數與網站停留時數之間的間隔線 */
+.personal-card .info-num .coursecounts:after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 30px;
+  background: #dddddd;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.personal-menu .menu-list:not(:last-child) {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.personal-menu a {
+  display: block;
+  color: #333333;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 30px;
+  position: relative;
+}
+
+.personal-menu .menu-list li {
+  background: #ffffff;
+  position: relative;
+}
+
+.personal-menu .menu-list li:hover {
+  background: #7ec5f1;
+}
+
+.personal-menu .menu-list li.a i {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  width: 3px;
+  height: 32px;
+  background: #7ec5f1;
+  vertical-align: middle;
+}
+
+.menu-list .disabled a {
+  pointer-events: none;
+  color: #dddddd;
+}
+
+/* #### 所有課程 左側分類 ####*/
+
+/* treeview */
+.treeview .list-group-item {
+  cursor: pointer;
+}
+
+.treeview span.indent {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.treeview span.icon {
+  width: 12px;
+  margin-right: 5px;
+}
+
+.treeview .node-disabled {
+  color: silver;
+  cursor: not-allowed;
+}
+
+/* list */
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 7px 7px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.node-treeview {
+  background-color: #f1f1f1;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* 影片數量圖示 */
+/* .list-group-item>.badge { */
+/* float: right; */
+/* display: inline-block; */
+/* min-width: 10px; */
+/* padding: 3px 7px; */
+/* font-size: 12px; */
+/* font-weight: bold; */
+/* line-height: 1; */
+/* color: #fff; */
+/* text-align: center; */
+/* white-space: nowrap; */
+/* vertical-align: baseline; */
+/* background-color: #777; */
+/* border-radius: 10px; */
+/* } */
+
+/* #### Tags彈跳視窗 ####*/
+
+/* 彈跳視窗大小 */
+/* .modal-dialog { */
+/* max-width: 800px; */
+/* margin: 1.75rem auto; */
+/* } */
+
+/* checkmark 樣式 */
+/* .checkmark { */
+/* height: 32px; */
+/* line-height: 27px; */
+/* width: auto; */
+/* font-size: 16px !important; */
+/* padding: 2px 12px; */
+/* border-radius: 4px; */
+/* font-weight: 400; */
+/* display: inline-block; */
+/* background-color: #FAFAFA; */
+/* color: #434343; */
+/* } */
+
+/* .demo-tags-wrapper input:checked~.checkmark-green { */
+/* background-color: #198754; */
+/* color: white */
+/* } */
+
+/* .demo-tags-wrapper input:checked~.checkmark-blue { */
+/* background-color: #0d6efd; */
+/* color: white; */
+/* } */
+
+/* 圓形標記 */
+/* .checkmark-circle { */
+/* border: none; */
+/* height: 32px; */
+/* width: 32px; */
+/* padding: 2px 2px; */
+/* border-radius: 50%; */
+/* } */
+
+
+/* input 隱藏 */
+/* .demo-tags-wrapper input { */
+/* position: absolute; */
+/* opacity: 0; */
+/* cursor: pointer; */
+/* height: 0; */
+/* width: 0; */
+/* } */
+
+/* label 樣式 */
+/* .demo-tags-wrapper { */
+/* display: inline-block; */
+/* 行內區塊 */
+/* position: relative; */
+/* 相對配置 */
+/* cursor: pointer; */
+/* 滑鼠游標樣式:指標(pointer) */
+/* -webkit-user-select: none; */
+/* -moz-user-select: none; */
+/* -ms-user-select: none; */
+/* user-select: none; */
+/* padding: 0; */
+/* margin: 0 4px 8px 0; */
+/* tag 間距 */
+/* } */
+
+/* accordion 樣式 */
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: #fff;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
+
+
+.accordion-button {
+  display: block;
+}
+
+/* #### 影片縮略圖 ####*/
+.video-container {
+  max-width: 95%;
+  margin: 2.5%;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-time {
+  clear: both;
+  font-weight: bold;
+  font-size: 11px;
+  background-color: #000;
+  color: #fff !important;
+  height: 14px;
+  line-height: 14px;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  display: -moz-inline-stack;
+  vertical-align: top;
+  zoom: 1;
+  z-index: 1;
+  display: inline-block;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  padding: 1px;
+}
+
+.video-time_vertical {
+  float: right;
+  margin-top: -20px;
+  margin-right: 5px;
+}
+
+/* #### 影片完成度 ####*/
+
+.completioninfo {
+  color: #333;
+  font-size: 14px;
+  /* height: 70px; */
+}
+
+.completioninfo .condition {
+  float: left;
+  /* width: 65%; */
+  margin-left: 1em;
+}
+
+.completionbutton {
+  /* float: right; */
+  /* width: 25%; */
+  text-align: right;
+  margin-top: 1em;
+  margin-right: 1em;
+}
+
+.completionsubmit {
+  font-family: Open Sans, sans-serif !important;
+  background-image: none;
+  background-color: #082048;
+  text-shadow: none;
+  border: 0;
+  color: #fff !important;
+  padding: 8px 15px 8px;
+  border-radius: 5px;
+}
+
+/* #### 課程圖卡 ####*/
+
+/* 課程圖卡通用設定 */
+.course-col {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.coursebox {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: 0.25rem;
+  height: 100%;
+  margin: 0.5rem;
+  min-width: 0;
+  padding: 2rem;
+
+  @media (min-width: 992px) {
+    padding: 1.0rem;
+  }
+}
+
+.course-image svg {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #e9f2ff;
+}
+
+.course-image svg image {
+  transform: scale(1, 1);
+  transform-origin: 50% 50%;
+  /* 设置为左上角 */
+  transition: all 1s ease-out;
+}
+
+.coursebox:hover .course-image svg image {
+  transform: scale(1.1, 1.1);
+  transition-duration: 0.5s;
+}
+
+.course-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.course-title {
+  margin-bottom: 0.5rem;
+  font-weight: 700 !important;
+
+  /* 最多兩行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+
+  /* 文字大小、高度 */
+  font-size: 2.5rem;
+  height: 7rem;
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+    height: 4rem;
+  }
+}
+
+.course-tag {
+  margin-top: 0.5rem;
+}
+
+.course-tag a {
+  font-size: 1rem;
+}
+
+.course-summary {
+  /* margin-top: 0.5rem !important; */
+  /* margin-bottom: 0.5rem !important; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-summary span {
+  font-weight: 500 !important;
+  display: flex;
+}
+
+.summary-label {
+  display: none !important;
+  /* width: 80px; */
+}
+
+.course-Info {
+  margin-top: 0.5rem;
+
+  /* 最多兩行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+.course-Info * {
+  margin: 0 auto;
+}
+
+.course-Info a {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.course-button {
+  width: 100%;
+  font-size: 1.25rem;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.course-button a {
+  width: 100%;
+}
+
+/* 網格檢視 */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+
+.courses-grid .course-col {
+  width: 100%;
+
+  @media (min-width: 992px) {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
+  @media (min-width: 1200px) {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
+
+.courses-grid .course-body {
+  padding: 1.0rem;
+
+  @media (min-width: 992px) {
+    padding: 1.25rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0.75rem;
+  }
+}
+
+.courses-grid .course-title {
+  @media (min-width: 1200px) {
+    font-size: 1.25rem;
+    height: 3.5rem;
+  }
+}
+
+.courses-grid .course-tag {
+  display: none;
+}
+
+.courses-grid .course-summary {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+
+  @media (min-width: 992px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+.courses-grid .course-summary .course-date {
+  display: none;
+}
+
+.courses-grid .course-Info {
+  display: none;
+}
+
+.courses-grid .course-button {
+  font-size: 2rem;
+  padding: 0rem;
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+  }
+}
+
+.courses-grid .course-button a {
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-width: 0;
+  padding: 0.5rem 0rem;
+}
+
+/* 首頁-網格檢視 */
+.front-courses .coursebox {
+  margin-bottom: -2.5rem;
+
+  @media (min-width: 992px) {
+    margin-bottom: -1.125rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: -1.5rem;
+  }
+}
+
+.front-courses .course-title {
+  height: auto;
+  -webkit-line-clamp: 1;
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
+}
+
+.front-courses .course-summary {
+  display: none;
+}
+
+.front-courses .course-button {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+  left: 0;
+  bottom: -66px;
+  height: 68px;
+
+  @media (min-width: 992px) {
+    bottom: -61px;
+    height: 63px;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: -38px;
+    height: 40px;
+  }
+}
+
+/* .front-courses .course-button a{ */
+/* height:60px; */
+/* @media (min-width: 992px) { */
+/* height:52px; */
+/* } */
+/* @media (min-width: 1200px) { */
+/* height:42px; */
+/* } */
+/* } */
+
+.front-courses .course-button a {
+  height: 100%
+}
+
+.front-courses .coursebox:hover .course-button {
+  transition: all 0.5s;
+  transform: translate(0px, -66px);
+
+  @media (min-width: 992px) {
+    transform: translate(0px, -61px);
+  }
+
+  @media (min-width: 1200px) {
+    transform: translate(0px, -38px);
+  }
+}
+
+/* .front-courses .course-summary { */
+/* margin-top: 1.25rem; */
+/* @media (min-width: 1200px) { */
+/* margin-top: 0rem; */
+/* display: inline-flex; */
+/* flex-wrap: wrap; */
+/* } */
+/* } */
+
+/* .front-courses .course-summary span { */
+/* @media (min-width: 1200px) { */
+/* padding-right: 0.5rem; */
+/* } */
+/* } */
+
+/* .front-courses .course-summary span:nth-child(1){ */
+/* @media (min-width: 1200px) { */
+/* width:100%; */
+/* } */
+/* } */
+
+/* .front-courses .course-button { */
+/* position: absolute; */
+/* display: inline-block; */
+/* cursor: pointer; */
+/* left: 0; */
+/* bottom: -56px; */
+/* @media (min-width: 992px) { */
+/* bottom: :-48px; */
+/* } */
+/* } */
+
+/* .front-courses .course-button a{ */
+/* height:60px; */
+/* @media (min-width: 992px) { */
+/* height:52px; */
+/* } */
+/* } */
+
+/* .front-courses .coursebox:hover .course-button{ */
+/* transition: all 0.5s;  */
+/* transform: translate(0px,-56px); */
+/* @media (min-width: 992px) { */
+/* transform: translate(0px,-56px); */
+/* } */
+/* } */
+
+/* 微學程-網格檢視 */
+.program-courses .course-image svg {
+  aspect-ratio: 16/9;
+}
+
+.program-courses .course-body {
+  padding-bottom: 0 !important;
+  margin-bottom: -1rem;
+}
+
+.program-courses .course-title {
+  margin-bottom: 0;
+}
+
+/* 所有課程-網格檢視 */
+.all-courses-grid .course-tag {
+  /* 最多一行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+}
+
+.all-courses-grid .course-tag a {
+  @media (min-width: 1200px) {
+    font-size: 0.875rem;
+    padding: 0.125rem 0.25rem;
+  }
+}
+
+
+.all-courses-grid .course-summary {
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.all-courses-grid .summary-label {
+  @media (min-width: 1200px) {
+    display: inline !important;
+  }
+}
+
+.all-courses-grid .course-summary .course-date {
+  @media (min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.all-courses-grid .course-button {
+  padding: 0rem;
+  margin: -1rem -1rem -2rem -2rem;
+  width: calc(100% + 4rem);
+
+  @media (min-width: 992px) {
+    margin: -1rem;
+    width: calc(100% + 2rem);
+  }
+}
+
+
+/* 清單檢視 */
+.courses-list .coursebox {
+  flex-direction: column;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+}
+
+.courses-list .course-image {
+  width: 100%;
+
+  @media (min-width: 992px) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 0 0 auto;
+  }
+}
+
+.courses-list .course-body {
+  padding: 1rem 0;
+  font-size: 1.25rem;
+
+  @media (min-width: 992px) {
+    flex: 0 0 auto;
+    padding: 0rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+.courses-list .course-tag {
+  /* 最多兩行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+
+  @media (min-width: 992px) {
+    /* 最多一行 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+  }
+}
+
+.courses-list .course-summary {
+  font-size: 1.25rem;
+
+  @media (min-width: 992px) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
+}
+
+.courses-list .course-Info {
+  font-size: 1.5rem;
+
+  @media (min-width: 992px) {
+    font-size: 1rem;
+  }
+}
+
+.courses-list .course-button a {
+  font-size: 2rem;
+
+  @media (min-width: 992px) {
+    font-size: 1rem;
+  }
+}
+
+/* 所有課程-清單檢視 */
+.all-courses-list .course-image {
+  @media (min-width: 992px) {
+    width: 25%;
+  }
+}
+
+.all-courses-list .course-body {
+  @media (min-width: 992px) {
+    width: 63%;
+  }
+}
+
+.all-courses-list .course-button {
+  @media (min-width: 992px) {
+    width: 12%;
+  }
+}
+
+/* 修課列表-清單檢視 */
+.mytocl-courses-list .course-image {
+  @media (min-width: 992px) {
+    width: 20%;
+  }
+}
+
+.mytocl-courses-list .course-body {
+  @media (min-width: 992px) {
+    width: 55%;
+  }
+}
+
+.mytocl-courses-list .course-title {
+  @media (min-width: 1200px) {
+    font-size: 1.25rem;
+    height: 3.5rem;
+  }
+}
+
+.mytocl-courses-list .course-Info {
+  /* 最多三行 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+
+  @media (min-width: 1200px) {
+    font-size: 0.875rem;
+  }
+}
+
+.mytoc-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.mytoc-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width: 50%;
+  background-color: #efefef;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 30px;
+  padding: 1rem 0;
+
+  @media (min-width: 992px) {
+    font-size: 0.875rem;
+  }
+}
+
+.mytoc-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width: 50%;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 30px;
+
+  @media (min-width: 992px) {
+    font-size: 0.875rem;
+  }
+}
+
+.mytoc-action .favorite {
+  margin-top: 15px;
+}
+
+.mytoc-action input[type="submit"] {
+  background-color: #1d65a6;
+  border-radius: 5px;
+  border-width: 0;
+  color: #fff !important;
+  padding: 0.25rem 0.75rem;
+}
+
+/* #### 課程頁面 ####*/
+
+/* 課程資訊 */
+.course-info .coursebox {
+  padding: 0rem;
+  border: none;
+}
+
+.course-info .course-image {
+  @media (min-width: 992px) {
+    width: 25%;
+  }
+}
+
+.course-info .coursebox:hover .course-image svg image {
+  transform: none;
+  /* 取消 transform */
+}
+
+.course-info .course-title {
+  /* 最多一行 */
+  -webkit-line-clamp: 1;
+
+  /* 文字大小、高度 */
+  font-size: 2.5rem;
+  height: 3.5rem;
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+    height: 2rem;
+  }
+}
+
+.course-info .course-tag {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.course-info .course-tag .course-tag-keyword {
+  display: none;
+}
+
+.course-info .course-body {
+  @media (min-width: 992px) {
+    width: 63%;
+  }
+}
+
+.course-info .course-summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-info .summary-label {
+  display: inline !important;
+}
+
+.course-info .course-button {
+  @media (min-width: 992px) {
+    width: 12%;
+  }
+}
+
+.course-info .row-fluid {
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+
+.course-info h3 {
+  border-bottom: 1px solid #d6d6d6;
+  color: #1d65a6;
+  border-color: #1d65a6;
+  padding-bottom:0.5rem;
+}
+
+
+/* 課程清單-課程資訊 */
+.coursemenu .course-body {
+  padding-right: 0;
+
+  @media (min-width: 992px) {
+    width: 75%;
+  }
+}
+
+
+/* 課程清單 */
+.block_course_menu .menulist {
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+  font-family: "微軟正黑體";
+  line-height: 40px;
+  color: #fff;
+}
+
+.block_course_menu .mainmenu {
+  font-size: 20px;
+  padding: 0px 10px 0px 10px;
+  margin: 0 0 2px;
+}
+
+.block_course_menu .menulist li {
+  font-family: "微軟正黑體";
+  text-align: left;
+  font-size: 20px;
+  list-style: none;
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 0 2px;
+}
+
+.block_course_menu .menulist li:hover,
+.block_course_menu .menulist li.active {
+  background-color: #18B9C7 !important;
+  color: white;
+  text-decoration: none;
+}
+
+.block_course_menu .menulist li a {
+  display: block;
+  color: #fff !important;
+  padding: 0px 10px 0px 10px;
+  text-decoration: none;
+}
+
+.block_course_menu .menulist .submenu li a,
+.block_course_menu .menulist [id^="tmenu"] .mainmenu span,
+.block_course_menu .menulist [id^="tmenu"] .mainmenu li a {
+  margin-left: 1.75rem;
+}
+
+/* 課程活動頁 */
+.accesshide {
+  display: none;
+}
+
+.course-content ul.section {
+  margin: 0 0.5rem;
+}
+
+.section .activity .mod-indent-outer {
+  /* padding-left: 1.5rem; */
+  width: 100%;
+}
+
+.section .activity .mod-indent-outer .mod-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.section .activity .actions {
+  position: relative;
+  right: -12px;
+  top: 0;
+}
+
+.section .activity .mod-indent-outer .availabilityinfo {
+  margin-left: 30px;
+}
+
+.section li.activity {
+  padding: 0.5rem;
+  clear: both;
+}
+
+.mod-indent-outer {
+  display: table;
+}
+
+.mod-indent {
+  display: table-cell;
+}
+
+.activity img.activityicon {
+  margin-right: 6px;
+  vertical-align: text-bottom;
+}
+
+img.iconlarge {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.section .activity .contentwithoutlink,
+.section .activity .activityinstance {
+  width: 100%;
+  display: table-cell;
+  padding-right: 4px;
+  min-height: 2em;
+}
+
+.block_course_menu .menulist li a:hover, .block_course_menu .menulist li a.active {
+    background-color: #18B9C7;
+    color: white;
+    text-decoration: none;
+}
+
+.unlist,
+.unlist li,
+.inline-list,
+.inline-list li,
+.block .list,
+.block .list li,
+.section li.activity,
+.section li.movehere,
+.tabtree li {
+  list-style: none;
+}
+
+.availabilityinfo li{
+  list-style:disc;
+  margin-top:0.5rem;
+  margin-left:1.5rem;
+}
+
+/* 完成度 */
+.completionprogress {
+  display: block;
+  /* position: relative; */
+  /* float: right; */
+  height: 20px;
+  /* padding: 0 0 10px; */
+  margin-button: 1.5rem; 
+  color: #666;
+  text-align: right;
+  font-size: 90%;
+}
+
+/* 選課頁面 */
+.fitem {
+  display: flex;
+  margin: 3rem 0 3rem 10rem;
+}
+
+.fitemtitle {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.felement {
+  display: contents;
+}
+
+.unmask * {
+  margin-left: 0.5rem;
+}
+
+.fitem_fsubmit {
+  padding-left: 72px;
+}
+
+
+
+/* 按鈕樣式 */
+.btn {
+  font-weight: 700;
+}
+
+/* 類別標籤樣式 */
+.course-tag-category {
+  font-weight: 500;
+  color: #198754;
+  border-color: #198754;
+  border-radius: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-tag-category:hover {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+}
+
+
+/* 關鍵字標籤樣式 */
+.course-tag-keyword {
+  font-weight: 500;
+  color: #0d6efd;
+  border-color: #0d6efd;
+  border-radius: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.course-tag-keyword:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+

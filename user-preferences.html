@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row py-3">
+          <div class="col-xl-3">
+            <div class="card-media personal-card">
+              <a href="#個人資訊" title="雲寶" target="_blank">
+                <img src="https://ck101.tw/uc_server/images/noavatar_big.gif" width="80" height="80" title="雲寶" alt="" style="border-radius:50%">
+              </a>
+              <div class="presonal-info">
+                <a href="#個人資訊" class="author-name" target="_blank" title="使用者名稱" style="font-size:18px">雲寶</a>
+              </div>
+              <div class="position-info">
+                <span title="身分">預報中心</span>
+              </div>
+              <div class="info-num">
+                <div class="coursecounts">
+                  <p>完成課程數</p>
+                  <a href="./user-course.html" title="共完成42門課程" style="text-decoration:none">42</a>
+                </div>
+                <div class="sitehours">
+                  <p>網站停留時數</p>
+                  <a href="./user-stats.html" title="累積停留172小時" style="text-decoration:none">172</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-media personal-menu mb-3">
+              <ul class="menu-list">
+                <li>
+                  <i></i>
+                  <a href="./user-info.html">個人資訊</a>
+                </li>
+              </ul>
+              <ul class="menu-list">
+                <li>
+                  <i></i>
+                  <a href="./user-course.html">我選修的課程</a>
+                </li>
+                <li class="disabled">
+                  <i></i>
+                  <a href="./user-teach.html">我授課的課程</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-programs.html">我選修的微學程</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-stats.html">修課綜覽</a>
+                </li>
+                <li class="a">
+                  <i></i>
+                  <a href="./user-preferences.html">偏好設定</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-9">
+            <div class="box">
+              <div>
+                <h3>偏好設定</h3>
+              </div>
+            </div>
+            <div class="box">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">用戶帳號</h4>
+                      <div class="card-text">
+                        <div><a href="./user/edit.php?id=401484&amp;course=1">編修個人資料</a></div>
+                        <div><a href="./login/change_password.php?id=1">更改密碼</a></div>
+                        <div><a href="./user/language.php?id=401484&amp;course=1">偏愛的語言</a></div>
+                        <div><a href="./user/forum.php?id=401484&amp;course=1">討論區偏好</a></div>
+                        <div><a href="./user/editor.php?id=401484&amp;course=1">編輯器偏好</a></div>
+                        <div><a href="./user/course.php?id=401484&amp;course=1">課程偏好</a></div>
+                        <div><a href="./user/calendar.php?id=401484">行事曆偏好設定</a></div>
+                        <div><a href="./message/edit.php?id=401484">簡訊偏好</a></div>
+                        <div><a href="./message/notificationpreferences.php?userid=401484">通知提醒的偏好</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">部落格</h4>
+                      <div class="card-text">
+                        <div><a href="./blog/preferences.php">部落格偏好</a></div>
+                        <div><a href="./blog/external_blogs.php">外面部落格</a></div>
+                        <div><a href="./blog/external_blog_edit.php">登記外面部落格</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <h4 class="card-title">獎章</h4>
+                      <div class="card-text">
+                        <div><a href="./badges/mybadges.php">管理獎章</a></div>
+                        <div><a href="./badges/preferences.php">獎章偏好</a></div>
+                        <div><a href="./badges/mybackpack.php">獎章收藏夾設定</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

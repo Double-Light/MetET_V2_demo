@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="bg-light">
+      <div id="main-slider" class="container-fluid carousel slide bg-light" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#main-slider" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#main-slider" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+          <button type="button" data-bs-target="#main-slider" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        </div>
+        <div class="carousel-inner" style="">
+          <div class="carousel-item active">
+            <img src="https://metet.cwa.gov.tw/pluginfile.php/1/theme_adaptable/p1/1614667654/%E4%B8%AD%E6%96%87%E7%89%88%E8%AC%9B%E7%BE%A9.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://metet.cwa.gov.tw/pluginfile.php/1/theme_adaptable/p2/1614667654/%E6%A2%85%E9%9B%A8II%E4%B8%AD%E6%96%87%E6%96%87%E5%AE%A3.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#main-slider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#main-slider" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item box">
+          <div class="accordion-header" id="HotTags-heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#HotTags-collapse" aria-expanded="true" aria-controls="HotTags-collapse">
+              <h2>熱門標籤</h2>
+            </button>
+          </div>
+          <div id="HotTags-collapse" class="accordion-collapse collapse show" aria-labelledby="HotTags-heading">
+            <div class="accordion-body">
+              <div class="col p-3">
+                <p class="fs-5 fw-bold m-1 me-3">類別</p>
+                <a class="btn course-tag-category" href="./allcourses.html?category=其它">其它</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=中尺度氣象">中尺度氣象</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=熱帶氣旋">熱帶氣旋</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=氣象預報中心專區">氣象預報中心專區</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=衛星氣象學">衛星氣象學</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=雷達氣象學">雷達氣象學</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=氣候學">氣候學</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=數值模式預報">數值模式預報</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=氣象A2O專區">氣象A2O專區</a>
+                <a class="btn course-tag-category" href="./allcourses.html?category=雲與霧">雲與霧</a>
+              </div>
+              <div class="col p-3">
+                <p class="fs-5 fw-bold m-1 me-3">關鍵字</p>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=颱風">颱風</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨">梅雨</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=預報">預報</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=天氣學">天氣學</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=作業SOP">作業SOP</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=新人訓練">新人訓練</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=作業系統">作業系統</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=夏季">夏季</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=大氣動力學">大氣動力學</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=鋒面">鋒面</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=美學案">美學案</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=數值天氣預報(NWP)">數值天氣預報(NWP)</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=定量降水預報(QPF)">定量降水預報(QPF)</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=程式語言">程式語言</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星">衛星</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=雷達">雷達</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=SCAN">SCAN</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=TAFIS">TAFIS</a>
+                <a class="btn course-tag-keyword" href="./allcourses.html?keyword=颮線">颮線</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item box">
+          <div class="accordion-header" id="LatestVideos-heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#LatestVideos-collapse" aria-expanded="true" aria-controls="LatestVideos-collapse">
+              <h2>最新影片</h2>
+            </button>
+          </div>
+          <div id="LatestVideos-collapse" class="accordion-collapse collapse show" aria-labelledby="LatestVideos-heading">
+            <div class="accordion-body">
+              <div id="frontpage-courses" class="courses-grid front-courses">
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_0.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7364/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B1.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_0.html" target="_blank">2022美學教育訓練1：社群數據分析與解讀</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=數據分析">數據分析</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=演算法">演算法</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=觸及率">觸及率</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=氣象">氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=關鍵字">關鍵字</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=臉書">臉書</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>157 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-11</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
+                        <a href="course/course_info/course_info_id_0.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_0.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7369/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B2.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練2：知識類社群行銷經驗之分享</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=法律">法律</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=白話文運動">白話文運動</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=法客電台">法客電台</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.1</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-19</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>以「法律白話文運動」為例，解構知識類社群如何擴大受眾並引起關注。</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_186.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練3：社群媒體行銷趨勢及經驗分享/其他新興平台之觀點</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=消費者行為">消費者行為</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=品牌">品牌</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.2</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-28</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>解構社群媒體運作模式及趨勢，包含Facebook、Youtube及LINE</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="videos/video_id_0.html" target="_blank" class="btn btn-warning">繼續課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7590/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B4.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練4：NFT 超基礎入門</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=元宇宙">元宇宙</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=區塊鏈">區塊鏈</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=比特幣">比特幣</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=以太坊">以太坊</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=去中心化">去中心化</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=非同質化代幣">非同質化代幣</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>1 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.1</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-06-21</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>淺談元宇宙區塊鏈新時代賦能及NFT基本應用</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_menu/course_view_id_186.html" target="_blank" class="btn btn-success">進入課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="#">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                            <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/3775/course/overviewfiles/Mei-Yu%20Front%2C%20Part%202%20Forecasting%20Frontal%20Movement%20and%20Precipitation%20Over%20Taiwan%20%28Chinese%29.jpg" width="100%" height="100%"></image>
+                          </svg>
+                        </a>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">梅雨鋒面II:近臺鋒面移動與降水預報(中文版)</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=中尺度氣象">中尺度氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨">梅雨</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=地形噴流">地形噴流</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=鋒面移動">鋒面移動</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道">衛星水氣頻道</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨鋒面">梅雨鋒面</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨對流">梅雨對流</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨降雨">梅雨降雨</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨降水">梅雨降水</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=中央氣象局">中央氣象局</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道觀測">衛星水氣頻道觀測</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道影像">衛星水氣頻道影像</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=1">UCAR | COMET</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>1.00 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>3121 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2019-12-10</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>本課程（以繁體中文及英文提供）向學員介紹影響梅雨鋒面移動及其伴隨對流強度變化的環境因素，例如鋒面附近的冷暖平流、對流產生的非絕熱效應及中尺度地形噴流與臺灣地形之交互作用等。學員將練習使用衛星水氣頻道影像和雷達觀測，以判斷可能影響梅雨鋒面的環境特徵，主觀調整NWP模式預報後，對梅雨鋒面影響的時間和降水量做出合理的預測。</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="videos/video_id_0.html" target="_blank" class="btn btn-warning">繼續課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_0.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7364/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B1.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_0.html" target="_blank">2022美學教育訓練1：社群數據分析與解讀</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=數據分析">數據分析</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=演算法">演算法</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=觸及率">觸及率</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=氣象">氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=關鍵字">關鍵字</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=臉書">臉書</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>157 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-11</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
+                        <a href="course/course_info/course_info_id_0.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_0.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-3 mx-auto">
+                <a class="btn btn-primary" href="./allcourses.html?sort=startdate">更多影片</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item box">
+          <div class="accordion-header" id="HotVideos-heading">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#HotVideos-collapse" aria-expanded="true" aria-controls="HotVideos-collapse">
+              <h2>熱門影片</h2>
+            </button>
+          </div>
+          <div id="HotVideos-collapse" class="accordion-collapse collapse show" aria-labelledby="HotVideos-heading">
+            <div class="accordion-body">
+              <div id="frontpage-courses" class="courses-grid front-courses">
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_0.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7364/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B1.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_0.html" target="_blank">2022美學教育訓練1：社群數據分析與解讀</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=數據分析">數據分析</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=演算法">演算法</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=觸及率">觸及率</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=氣象">氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=關鍵字">關鍵字</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=臉書">臉書</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>157 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-11</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
+                        <a href="course/course_info/course_info_id_0.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_0.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7369/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B2.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練2：知識類社群行銷經驗之分享</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=法律">法律</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=白話文運動">白話文運動</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=法客電台">法客電台</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.1</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-19</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>以「法律白話文運動」為例，解構知識類社群如何擴大受眾並引起關注。</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_186.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7431/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B3.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練3：社群媒體行銷趨勢及經驗分享/其他新興平台之觀點</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=消費者行為">消費者行為</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=品牌">品牌</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.2</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-28</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>解構社群媒體運作模式及趨勢，包含Facebook、Youtube及LINE</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="videos/video_id_0.html" target="_blank" class="btn btn-warning">繼續課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_186.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7590/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B4.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">2022美學教育訓練4：NFT 超基礎入門</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=元宇宙">元宇宙</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=區塊鏈">區塊鏈</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=比特幣">比特幣</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=以太坊">以太坊</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=去中心化">去中心化</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=非同質化代幣">非同質化代幣</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>1 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>62 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.1</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-06-21</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>淺談元宇宙區塊鏈新時代賦能及NFT基本應用</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_menu/course_view_id_186.html" target="_blank" class="btn btn-success">進入課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="#">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                            <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/3775/course/overviewfiles/Mei-Yu%20Front%2C%20Part%202%20Forecasting%20Frontal%20Movement%20and%20Precipitation%20Over%20Taiwan%20%28Chinese%29.jpg" width="100%" height="100%"></image>
+                          </svg>
+                        </a>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_186.html" target="_blank">梅雨鋒面II:近臺鋒面移動與降水預報(中文版)</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=中尺度氣象">中尺度氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨">梅雨</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=地形噴流">地形噴流</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=鋒面移動">鋒面移動</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道">衛星水氣頻道</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨鋒面">梅雨鋒面</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨對流">梅雨對流</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨降雨">梅雨降雨</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=梅雨降水">梅雨降水</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=中央氣象局">中央氣象局</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道觀測">衛星水氣頻道觀測</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=衛星水氣頻道影像">衛星水氣頻道影像</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=1">UCAR | COMET</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>1.00 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>3121 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2019-12-10</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>本課程（以繁體中文及英文提供）向學員介紹影響梅雨鋒面移動及其伴隨對流強度變化的環境因素，例如鋒面附近的冷暖平流、對流產生的非絕熱效應及中尺度地形噴流與臺灣地形之交互作用等。學員將練習使用衛星水氣頻道影像和雷達觀測，以判斷可能影響梅雨鋒面的環境特徵，主觀調整NWP模式預報後，對梅雨鋒面影響的時間和降水量做出合理的預測。</p>
+                        <a href="course/course_info/course_info_id_186.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="videos/video_id_0.html" target="_blank" class="btn btn-warning">繼續課程</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="course-col" style="">
+                  <div class="coursebox">
+                    <div class="course-image">
+                      <a href="course/course_info/course_info_id_0.html" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="課程縮圖">
+                          <image xlink:href="https://metet.cwa.gov.tw/pluginfile.php/7364/course/overviewfiles/2022%E7%BE%8E%E5%AD%B8%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4_%E8%AA%B2%E7%A8%8B1.png" width="100%" height="100%"></image>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="course-body">
+                      <div class="course-title">
+                        <a href="course/course_info/course_info_id_0.html" target="_blank">2022美學教育訓練1：社群數據分析與解讀</a>
+                      </div>
+                      <div class="course-tag">
+                        <a class="btn course-tag-category" href="./allcourses.html?category=傳播與美學">傳播與美學</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=社群媒體">社群媒體</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=數據分析">數據分析</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=演算法">演算法</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=觸及率">觸及率</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=氣象">氣象</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=關鍵字">關鍵字</a>
+                        <a class="btn course-tag-keyword" href="./allcourses.html?keyword=臉書">臉書</a>
+                      </div>
+                      <div class="course-summary">
+                        <span><i class="bi bi-arrow-bar-up me-2"></i><span class="summary-label">課程來源：</span><a href="./allcourses.html?origin=2">CWA</a></span>
+                        <span><i class="bi bi-clock me-2"></i><span class="summary-label">所需時間：</span>2 小時</span>
+                        <span><i class="bi bi-people me-2"></i><span class="summary-label">修課人數：</span>157 人</span>
+                        <span><i class="bi bi-star me-2"></i><span class="summary-label">課程評分：</span>4.7</span>
+                        <span class="course-date"><i class="bi bi-calendar me-2"></i><span class="summary-label">開始日期：</span>2022-04-11</span>
+                      </div>
+                      <div class="course-Info">
+                        <p>透過分析社群媒體後台數據，解讀網路使用者行為模式，找出增加觸及率、加強氣象資訊傳遞之行銷方式。</p>
+                        <a href="course/course_info/course_info_id_0.html" target="_blank" style="float:right">更多資訊</a>
+                      </div>
+                    </div>
+                    <div class="course-button">
+                      <a href="course/course_info/course_select_id_0.html" target="_blank" class="btn btn-primary">報名選課</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-grid gap-2 col-3 mx-auto">
+                <a class="btn btn-primary" href="./allcourses.html?sort=popular">更多影片</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

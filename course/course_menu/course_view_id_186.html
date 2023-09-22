@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+
+    <!-- CSS 檔 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- 自訂義 CSS -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- MetET Icon -->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+
+    <!-- JS 檔 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="https://mytube.ncku.edu.tw/js/bootstrap-treeview.js"></script> -->
+
+  </head>
+
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="../../index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../../index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col">
+        <div class="row pt-3">
+          <div class="col">
+            <div class="box pb-1">
+              <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li><a href="#index.html" style="margin-right:12px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                      <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                    </svg>
+                    </a></li>
+                  <li class="breadcrumb-item">氣象署</li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="course_view_id_186.html">天氣預報原理與預報中心作業流程概述</a></li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-xl-3">
+            <div class="box">
+              <div id="inst4390" class="block_course_menu block no-header" role="complementary" data-block="course_menu" data-instanceid="4390" aria-label="課程選單">
+                <div class="content">
+                  <div class="block_action notitle"></div>
+                  <div id="coursemenudiv" class="menulist">
+                    <li class="" style="background:#333"><a href="./course_information_id_186.html"><i class="fa icon-icon_1 fa-fw"></i>&nbsp;課程資訊</a></li>
+                    <div class="mainmenu" onclick='SwitchCourseMenu("tmenu2")' style="background:#fa820f"><i class="fa icon-icon_2 fa-fw"></i>&nbsp;課程內容</div>
+                    <span id="tmenu2" class="submenu" style="">
+                      <li style="background:#2b6da3" class="active"><a class="" href="./course_view_id_186.html">所有活動</a></li>
+                      <li style="background:#2b6da3"><a class="" href="./course_resource_id_186.html">教材</a></li>
+                      <li style="background:#2b6da3"><a class="" href="./course_video_id_186.html">影音</a></li>
+                      <li style="background:#2b6da3"><a class="" href="./course_quizzes_id_186.html">測驗與認證</a></li>
+                    </span>
+                    <li class="" style="background:#333"><a class="" href="https://metet.cwa.gov.tw/grade/report/grader/index.php?id=186"><i class="fa icon-icon_7 fa-fw"></i>&nbsp;課程成績</a></li>
+                    <div class="mainmenu accesshide" onclick='SwitchCourseMenu("tmenu6")' style="background:#333"><i class="fa icon-icon_8 fa-fw"></i>&nbsp;課程報表</div>
+                    <span id="tmenu6" class="submenu" style="display:none">
+                      <li class="" style="background:#2b6da3"><a class="" href="https://metet.cwa.gov.tw/report/loggedinpro/addon/stayhours/overview.php?id=186">學員報表</a></li>
+                      <li class="" style="background:#2b6da3"><a class="" href="https://metet.cwa.gov.tw/report/overviewstatspro/index.php?course=186">整體統計量表</a></li>
+                      <li class="" style="background:#2b6da3"><a class="" href="https://metet.cwa.gov.tw/report/completion/index.php?course=186">課程完成</a></li>
+                      <li class="mainmenu" onclick='SwitchCourseMenu("tmenu10")' style="background:#2b6da3"><span>課程成效分析</span></li>
+                      <span id="tmenu10" class="submenu" style="display:none">
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/grades_chart.php?id=186">成績統計分析</a></li>
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/timeaccesseschart.php?id=186&amp;days=7">活躍學生數統計</a></li>
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/hits.php?id=186&amp;legacy=0">活動參與人次統計</a></li>
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/graphresourceone.php?id=186">活動參與分佈圖</a></li>
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/assign.php?id=186">作業繳交統計</a></li>
+                        <li class="" style="background:#abb2b9"><a class="" href="https://metet.cwa.gov.tw/report/studyperform/quiz.php?id=186">測驗繳交統計</a></li>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-9 course-info coursemenu">
+            <div class="box" style="display:none;">
+              <div class="courses-list">
+                <div class="coursebox">
+                    <h2>2022天氣預報原理與預報中心作業流程概述</h2>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <span class="notifications" id="user-notifications"></span>
+              <div role="main" id="yui_3_17_2_1_1695172245764_124"><span id="maincontent"></span>
+                <form action="." method="get">
+                  <div><input type="hidden" id="completion_dynamic_change" name="completion_dynamic_change" value="0"></div>
+                </form>
+                <div class="course-content" id="yui_3_17_2_1_1695172245764_123">
+                  <div id="completionprogressid" class="completionprogress">您的進度<span class="helptooltip" id="yui_3_17_2_1_1695172245764_122"><a href="https://metet.cwa.gov.tw/help.php?component=completion&amp;identifier=completionicons&amp;lang=zh_tw" title="完成狀態勾選方格的輔助" aria-haspopup="true" target="_blank" id="yui_3_17_2_1_1695172245764_121"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/help" alt="完成狀態勾選方格的輔助" class="iconhelp" id="yui_3_17_2_1_1695172245764_120"></a></span></div>
+                  <!-- <h2 class="accesshide">主題大綱</h2> -->
+                  <div>
+                    <div class="row-fluid">
+                      <div class="content">
+                        <div>2019年版課程資源(已停止授課)是不能使用的</div>
+                      </div>
+                    </div>
+                    <div class="row-fluid" role="region" aria-label="2020年版課程資源">
+                      <div class="content">
+                        <h3 class="sectionname"><span>2020年版課程資源</span></h3>
+                        <div class="summary"></div>
+                        <ul class="section img-text">
+                          <li class="activity resource modtype_resource " id="module-2242">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="mod-row">
+                                  <div class="activityinstance"><a class="" onclick="" href="https://metet.cwa.gov.tw/mod/resource/view.php?id=2242"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/f/powerpoint-24" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">1125-4-天氣預報原理與預報中心作業流程概述<span class="accesshide "> 檔案</span></span></a></div><span class="actions">
+                                  <form method="post" action="#" class="togglecompletion">
+                                    <div><input type="hidden" name="id" value="2242"><input type="hidden" name="sesskey" value="1RduDPuQ3i"><input type="hidden" name="modulename" value="1125-4-天氣預報原理與預報中心作業流程概述"><input type="hidden" name="completionstate" value="1"><input type="image" src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/i/completion-manual-n" alt="未完成：1125-4-天氣預報原理與預報中心作業流程概述 。點選標記為完成。" title="標記為完成：1125-4-天氣預報原理與預報中心作業流程概述" aria-live="polite"></div>
+                                  </form>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity videos modtype_videos " id="module-2243">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="mod-row">
+                                  <div class="activityinstance"><a class="" onclick="" href="../../videos/video_id_1.html"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/videos/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">課程影片1：預報基本概念<span class="accesshide "> 影音教材</span></span></a></div><span class="actions"><span class="autocompletion"><img title="尚未完成：課程影片1：預報基本概念" class="smallicon" alt="尚未完成：課程影片1：預報基本概念" src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/i/completion-auto-n"></span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity videos modtype_videos " id="module-2244">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="mod-row">
+                                  <div class="activityinstance"><a class="" onclick="" href="https://metet.cwa.gov.tw/mod/videos/view.php?id=2244"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/videos/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">課程影片2：預報員面臨的挑戰<span class="accesshide "> 影音教材</span></span></a></div><span class="actions"><span class="autocompletion"><img title="尚未完成：課程影片2：預報員面臨的挑戰" class="smallicon" alt="尚未完成：課程影片2：預報員面臨的挑戰" src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/i/completion-auto-n"></span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity videos modtype_videos " id="module-2245">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="mod-row">
+                                  <div class="activityinstance"><a class="" onclick="" href="https://metet.cwa.gov.tw/mod/videos/view.php?id=2245"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/videos/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">課程影片3：預報作業流程及服務項目<span class="accesshide "> 影音教材</span></span></a></div><span class="actions"><span class="autocompletion"><img title="尚未完成：課程影片3：預報作業流程及服務項目" class="smallicon" alt="尚未完成：課程影片3：預報作業流程及服務項目" src="https://metet.cwa.gov.tw/theme/image.php/adaptable/core/1694764962/i/completion-auto-n"></span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity quiz modtype_quiz " id="module-2246">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="">
+                                  <div class="activityinstance">
+                                    <div class="dimmed_text"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/quiz/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">課後測驗<span class="accesshide "> 測驗卷</span></span></div>
+                                  </div>
+                                  <div class="availabilityinfo">沒有，除非：<ul>
+                                    <li style="list-style: disc;margin-top: 0.5rem;margin-left:1.5rem;">此項活動<strong><a href="https://metet.cwa.gov.tw/mod/videos/view.php?id=2243">課程影片1：預報基本概念</a></strong>被標記為已完成</li>
+                                    <li style="list-style: disc;margin-top: 0.5rem;margin-left:1.5rem;">此項活動<strong><a href="https://metet.cwa.gov.tw/mod/videos/view.php?id=2244">課程影片2：預報員面臨的挑戰</a></strong>被標記為已完成</li>
+                                    <li style="list-style: disc;margin-top: 0.5rem;margin-left:1.5rem;">此項活動<strong><a href="https://metet.cwa.gov.tw/mod/videos/view.php?id=2245">課程影片3：預報作業流程及服務項目</a></strong>被標記為已完成</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row-fluid" role="region" aria-label="回饋單與證書">
+                      <div class="content">
+                        <h3 class="sectionname"><span>回饋單與證書</span></h3>
+                        <div class="summary"></div>
+                        <ul class="section img-text">
+                          <li class="activity feedback modtype_feedback " id="module-1118">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="">
+                                  <div class="activityinstance">
+                                    <div class="dimmed_text"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/feedback/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">回饋單</span></div>
+                                  </div>
+                                  <div class="availabilityinfo">沒有，除非： 你於<strong>課後測驗</strong>的分數達到要求。</div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity certificate modtype_certificate " id="module-1525">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div class="">
+                                  <div class="activityinstance">
+                                    <div class="dimmed_text"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/certificate/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">課程完成證書</span></div>
+                                  </div>
+                                  <div class="availabilityinfo">沒有，除非： 此項活動<strong>回饋單</strong>被標記為已完成</div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="activity forum modtype_forum " id="module-1526">
+                            <div>
+                              <div class="mod-indent-outer">
+                                <div class="mod-indent"></div>
+                                <div>
+                                  <div class="activityinstance"><a class="" onclick="" href="https://metet.cwa.gov.tw/mod/forum/view.php?id=1526"><img src="https://metet.cwa.gov.tw/theme/image.php/adaptable/forum/1694764962/icon" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">討論區</span></a></div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+      function SwitchCourseMenu(id) {
+        var targetElement = document.getElementById(id);
+
+        // 检查目标元素的当前状态
+        if (targetElement.style.display === "none" || targetElement.style.display === "") {
+          // 如果目标元素当前是隐藏的，显示它
+          targetElement.style.display = "block"; // 或 "inline"，根据您的需求
+        } else {
+          // 如果目标元素当前是显示的，隐藏它
+          targetElement.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+
+</html>

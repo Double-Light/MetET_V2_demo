@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8">
+    <title>氣象預報培訓平台demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <style></style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="page-header-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid" style="">
+          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./user-info.html">個人資訊</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./allcourses.html">所有課程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./program.html">微學程</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./aboutus.html">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+              <div class="input-group">
+                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                <div class="input-group-btn">
+                  <button class="btn btn-light" type="submit">
+                    <svg
+                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
+              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row py-3">
+          <div class="col-xl-3">
+            <div class="card-media personal-card">
+              <a href="#個人資訊" title="雲寶" target="_blank">
+                <img src="https://ck101.tw/uc_server/images/noavatar_big.gif" width="80" height="80" title="雲寶" alt="" style="border-radius:50%">
+              </a>
+              <div class="presonal-info">
+                <a href="#個人資訊" class="author-name" target="_blank" title="使用者名稱" style="font-size:18px">雲寶</a>
+              </div>
+              <div class="position-info">
+                <span title="身分">預報中心</span>
+              </div>
+              <div class="info-num">
+                <div class="coursecounts">
+                  <p>完成課程數</p>
+                  <a href="./user-course.html" title="共完成42門課程" style="text-decoration:none">42</a>
+                </div>
+                <div class="sitehours">
+                  <p>網站停留時數</p>
+                  <a href="./user-stats.html" title="累積停留172小時" style="text-decoration:none">172</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-media personal-menu mb-3">
+              <ul class="menu-list">
+                <li>
+                  <i></i>
+                  <a href="./user-info.html">個人資訊</a>
+                </li>
+              </ul>
+              <ul class="menu-list">
+                <li>
+                  <i></i>
+                  <a href="./user-course.html">我選修的課程</a>
+                </li>
+                <li class="disabled">
+                  <i></i>
+                  <a href="./user-teach.html">我授課的課程</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-programs.html">我選修的微學程</a>
+                </li>
+                <li class="a">
+                  <i></i>
+                  <a href="./user-stats.html">修課綜覽</a>
+                </li>
+                <li>
+                  <i></i>
+                  <a href="./user-preferences.html">偏好設定</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-9">
+            <div class="box">
+              <div>
+                <h3>修課綜覽</h3>
+                <p>56 門課程 | 累計瀏覽次數：97次 | 累計停留時數：172小時</p>
+              </div>
+            </div>
+            <div class="box" style="">
+              <h4>影片教材統計</h4>
+              <table class="table table-light table-striped">
+                <thead>
+                  <tr>
+                    <th style="width: 5%;" style="width: 5%;">&nbsp;</th>
+                    <th style="width: 25%;">課程全名</th>
+                    <th style="width: 15%;">課程類別</th>
+                    <th style="width: 15%;">課程來源</th>
+                    <th class="text-center" style="width: 10%;">課程完成狀態</th>
+                    <th class="text-center" style="width: 10%;">活動點擊次數</th>
+                    <th class="text-center" style="width: 10%;">課程停留總時數(小時)</th>
+                    <th class="text-center" style="width: 10%;">影片累計觀看總時數(小時)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 5%;">1</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=205" target="_blank">窺探2019夏季氣候－從影響東亞與西北太平洋夏季氣候的動力機制談起</a></td>
+                    <td style="width: 15%;">其它 Other</td>
+                    <td style="width: 15%;">CWB|Open Course</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">22</td>
+                    <td class="text-center" style="width: 10%;">13.8</td>
+                    <td class="text-center" style="width: 10%;">2.8</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">2</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=182" target="_blank">熱帶氣旋之定位與強度估計</a></td>
+                    <td style="width: 15%;">衛星氣象學 Satellite Meteorology</td>
+                    <td style="width: 15%;">CWB|Open Course</td>
+                    <td class="text-center" style="width: 10%;">80.00</td>
+                    <td class="text-center" style="width: 10%;">15</td>
+                    <td class="text-center" style="width: 10%;">13.7</td>
+                    <td class="text-center" style="width: 10%;">0.3</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">3</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=181" target="_blank">衛星影像與天氣系統之分析應用</a></td>
+                    <td style="width: 15%;">衛星氣象學 Satellite Meteorology</td>
+                    <td style="width: 15%;">CWB|Open Course</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">30</td>
+                    <td class="text-center" style="width: 10%;">32.5</td>
+                    <td class="text-center" style="width: 10%;">0.5</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">4</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=327" target="_blank">2023梅雨季教育訓練</a></td>
+                    <td style="width: 15%;">氣象預報中心專區 for Weather Forecast Center</td>
+                    <td style="width: 15%;">CWB|Forecaster Only</td>
+                    <td class="text-center" style="width: 10%;">- -</td>
+                    <td class="text-center" style="width: 10%;">3</td>
+                    <td class="text-center" style="width: 10%;">10.4</td>
+                    <td class="text-center" style="width: 10%;">0</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">5</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=301" target="_blank">臺灣颱風災害風險溝通：應用「衝擊預警」方法(中文版)</a></td>
+                    <td style="width: 15%;">環境與社會 Environment &amp; Society</td>
+                    <td style="width: 15%;">CWB|Open Course</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">16</td>
+                    <td class="text-center" style="width: 10%;">22.9</td>
+                    <td class="text-center" style="width: 10%;">0.4</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">6</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=328" target="_blank">2023年氣象站回饋報告(上)_「山區暴雨背景資料評估」及「外島霧的統計特性」</a></td>
+                    <td style="width: 15%;">氣象預報中心專區 for Weather Forecast Center</td>
+                    <td style="width: 15%;">CWB|Forecaster Only</td>
+                    <td class="text-center" style="width: 10%;">- -</td>
+                    <td class="text-center" style="width: 10%;">10</td>
+                    <td class="text-center" style="width: 10%;">10.6</td>
+                    <td class="text-center" style="width: 10%;">2.1</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">7</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=322" target="_blank">TSWP臺灣劇烈天氣實驗預報產品展示頁面及AI技術介紹</a></td>
+                    <td style="width: 15%;">氣象預報中心專區 for Weather Forecast Center</td>
+                    <td style="width: 15%;">CWB|Forecaster Only</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">12</td>
+                    <td class="text-center" style="width: 10%;">15.5</td>
+                    <td class="text-center" style="width: 10%;">0.4</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">8</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=320" target="_blank">2022年氣象站回饋報告_各縣市氣候特徵</a></td>
+                    <td style="width: 15%;">氣象預報中心專區 for Weather Forecast Center</td>
+                    <td style="width: 15%;">CWB|Forecaster Only</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">29</td>
+                    <td class="text-center" style="width: 10%;">31.6</td>
+                    <td class="text-center" style="width: 10%;">3.9</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">9</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=318" target="_blank">NSHARP探空圖表、參數升級簡介與實務應用</a></td>
+                    <td style="width: 15%;">其它 Other</td>
+                    <td style="width: 15%;">CWB|CWB Staff</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">7</td>
+                    <td class="text-center" style="width: 10%;">17</td>
+                    <td class="text-center" style="width: 10%;">0</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%;">10</td>
+                    <td style="width: 25%;"><a href="https://metet.cwa.gov.tw/course/view.php?id=265" target="_blank">颱風季預報教育訓練</a></td>
+                    <td style="width: 15%;">氣象預報中心專區 for Weather Forecast Center</td>
+                    <td style="width: 15%;">CWB|Forecaster Only</td>
+                    <td class="text-center" style="width: 10%;">X</td>
+                    <td class="text-center" style="width: 10%;">89</td>
+                    <td class="text-center" style="width: 10%;">53.5</td>
+                    <td class="text-center" style="width: 10%;">3.1</td>
+                  </tr>
+                </tbody>
+              </table>
+			  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <div class="container-fluid">
+        <hr>
+        <div class="text-center text-muted">本網站所有的影片資料皆受著作權保護，未經授權不得為任何不當之利用
+          <br>Firefox,Safari,Chrome and IE9+ Recommended
+          <br>中央氣象局 版權所有 © CWB All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
