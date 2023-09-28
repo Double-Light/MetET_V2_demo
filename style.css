@@ -76,11 +76,6 @@ li {
   margin-bottom: 20px;
 }
 
-.accordion .box {
-  padding: 12px 12px;
-  margin: 48px 0;
-}
-
 .justify-between {
   justify-content: space-between;
 }
@@ -93,14 +88,20 @@ li {
   display: flex;
 }
 
-/* 色調 */
-
+/* ## 色調 ## */
+/* 主色調 */
 .bg-primary {
   background-color: #1d65a6 !important;
 }
 
+/* 主色調-淺色 */
 .bg-light {
   background-color: #ddedf6 !important;
+}
+
+/* 主色調-深色 */
+.bg-dark {
+  /* background-color: #ddedf6 !important; */
 }
 
 .text-primary {
@@ -136,13 +137,285 @@ li {
 
 /* #### 頁首樣式 ####*/
 
-/* 導覽列*/
-.navbar-nav {
-  font-size: 0.875rem;
+/* ## 頁首--導覽列 ##*/
+.navbar {
+  background-color: #1d65a6;
+  padding: 0;
+}
+
+.navbar .container-fluid {
+  padding: 0;
+}
+
+.navbar-brand {
+  margin: 0.5rem 0rem;
+  @media (min-width: 992px) {
+    margin: 0.5rem 1rem 0.5rem 0rem;
+  }
+}
+
+.navbar-toggler {
+  margin-right: 2rem;
+}
+
+.navbar-collapse {
+  padding: 2rem 4rem;
+  background-color: #fff;
+  max-width: 1240px;
+  @media (min-width: 992px) {
+    padding: 0 1rem 0 0;
+    background-color: transparent;
+    color: #fff;
+  }
+}
+
+.navbar-nav{
+  /*   margin: 1rem 0; */
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #d6d6d6;
+  @media (min-width: 992px) {
+    /* font-size: 0.875rem; */
+    margin: 0;
+	font-weight: 700;
+    padding-bottom: 0;
+    border: 0;
+  }
+}
+
+.nav-item .btn {
+  font-weight: 400 !important;
+  @media (min-width: 992px) {
+    padding: 6px 10px !important;
+  }
 }
 
 
+.nav-link {
+  @media (max-width: 992px) {
+    color: #222 !important;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgb(255 255 255 / 67%);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255,255,255,90%);
+}
+
+.nav-link .nav-link-label {
+  display: initial;
+  margin-left: 0.5rem;
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+
+/* ## 頁首--導覽列icon ##*/
+#nav-icons{
+  margin-top:1rem;
+  padding-bottom: 1rem;
+  @media (min-width: 992px) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#nav-icons > li:not(:last-child){
+  /*   margin: 0.5rem 0; */
+  margin: 0.25rem 0;
+  @media (min-width: 992px) {
+    margin: 0;
+  }
+}
+
+#user-icon{
+  order:1;
+  @media (min-width: 992px) {
+    order:4;
+  }
+}
+
+#language-icon{
+  order:2;
+}
+
+#notification-icon {
+  /*   border-bottom: 1px solid #d6d6d6; */
+  /*   padding-bottom: 1rem; */
+  order:3;
+  @media (min-width: 992px) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}
+
+#search-icon{
+  order:4;
+  @media (min-width: 992px) {
+    order:1;
+  }
+}
+
+/* ## 頁首--導覽列icon--使用者區塊 ##*/
+#user-icon .input-group{
+  display: none;
+  @media (min-width: 992px) {
+    display: flex;
+  }
+}
+
+#user-box {
+  /*   margin: 1rem 0; */
+  /*   padding-bottom: 0.5rem; */
+  margin-bottom: 8px;
+  @media (min-width: 992px) {
+    display: none;
+    position: absolute;
+    top: 36px;
+    right: -1rem;
+    padding: 1.5rem;
+    background: #transparent;
+    z-index: 100;
+  }
+}
+
+#user-box > div {
+  /*   margin: 1rem 0; */
+  /*   padding-bottom: 0.5rem; */
+  @media (min-width: 992px) {
+    width: 200px;
+    padding: 0.5rem 1rem;
+    color: #222;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 101;
+  }
+}
+
+#user-box .navbar-nav {
+  @media (min-width: 992px) {
+    flex-direction: column !important;
+  }
+}
+
+#user-box .navbar-nav li a {
+  @media (min-width: 992px) {
+/*     padding: 6px 10px !important; */
+    color: #222 !important;
+  }
+}
+
+#user-box .disabled a {
+  display:none;
+}
+
+.user-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+#user-button{
+  margin-top: 1.5rem;
+  @media (min-width: 992px) {
+    display:none;
+  }
+}
+
+#user-box .user-button {
+  display:none;
+  @media (min-width: 992px) {
+    display: inline-block
+  }
+}
+
+/* ## 頁首--導覽列icon--使用者區塊--移入顯示 ##*/
+#user-icon:hover > #user-box {
+  display: block;
+}
+
+#user-box:hover {
+  display: block;
+}
+
+/* ## 頁首--導覽列icon--搜尋按鈕 ##*/
+.search-query {
+  width: calc(100% - 38px);
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.search-query input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-query .btn-close {
+  display: none;
+}
+
+#search-btn {
+  padding: 6px 10px !important;
+  color: rgba(255, 255, 255, .55);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #fff;
+  border-color: #ced4da;
+  /*   padding: 6px 10px; */
+  @media (min-width: 992px) {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+#search-btn .nav-link-label {
+  display: none;
+}
+
+/* 頁首--導覽列icon--搜尋按鈕--展開 */
+.active .search-query {
+  display: flex;
+  position: relative;
+}
+
+.active .search-query .btn-close {
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    color: #6c757d;
+  }
+}
+
+.active #search-btn {
+  /*   padding: 6px 10px; */
+  background-color: #fff;
+  border-color: #ced4da;
+}
+
+.active #search-btn i {
+  color: #111;
+}
+
+.active .btn span {
+  /*   display:none; */
+}
+
+
+
 /* #### 首頁樣式 ####*/
+.slider-background{
+  background-color: #fff;
+  /* padding: 0.5rem 0; */
+}
 
 /* 首頁-關鍵字標籤 */
 #HotTags-collapse a {
@@ -184,20 +457,18 @@ li {
   background-color: #fff;
 }
 
-
-
-
-/* #### 個人資訊 左側區塊 樣式 ####*/
-
-.card-media {
-  min-width: 210px;
-}
-
+/* #### 使用者區塊通用樣式 ####*/
 .personal-card {
   text-align: center;
-  margin-bottom: 10px;
-  padding: 30px 0 20px 0;
+  position: relative;
 }
+
+
+/* .personal-card { */
+  /* text-align: center; */
+  /* margin-bottom: 10px; */
+  /* padding: 30px 0 20px 0; */
+/* } */
 
 .personal-card,
 .personal-menu {
@@ -215,33 +486,81 @@ li {
   text-decoration: none;
 }
 
-.personal-card .position-info {
-  margin-bottom: 24px;
+/* .personal-card .position-info { */
+  /* margin-bottom: 24px; */
+/* } */
+
+/* .personal-card .info-num .coursecounts, */
+/* .personal-card .info-num .sitehours { */
+  /* width: 50%; */
+  /* text-align: center; */
+  /* float: left; */
+/* } */
+
+/* .personal-card .info-num .coursecounts { */
+  /* position: relative; */
+/* } */
+
+.personal-card .personal-stat {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #eeeeee;
 }
 
-.personal-card .info-num .coursecounts,
-.personal-card .info-num .sitehours {
+.personal-card .personal-stat div {
   width: 50%;
   text-align: center;
-  float: left;
 }
 
-.personal-card .info-num .coursecounts {
-  position: relative;
+.personal-card .personal-stat p {
+  margin-bottom: 0.25rem;
 }
 
 /* 完成課程數與網站停留時數之間的間隔線 */
-.personal-card .info-num .coursecounts:after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 30px;
-  background: #dddddd;
-  position: absolute;
-  top: 5px;
-  right: 0;
+/* .personal-card .info-num .coursecounts:after { */
+  /* content: ""; */
+  /* display: inline-block; */
+  /* width: 1px; */
+  /* height: 30px; */
+  /* background: #dddddd; */
+  /* position: absolute; */
+  /* top: 5px; */
+  /* right: 0; */
+/* } */
+
+
+/* #### 個人資訊 左側區塊 樣式 ####*/
+
+/* ## 個人資訊 左側區塊 使用者區塊 ##*/
+#personal-box{
+	min-width: 210px;
 }
 
+#personal-box .personal-card {
+  margin-bottom: 10px;
+  padding: 30px 0 20px 0;
+}
+
+#personal-box .personal-card .personal-stat {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 0;
+  padding: 1rem 0;
+  border: 0px;
+}
+
+#personal-box .personal-card .personal-stat > div:first-child {
+  border-right: 1px solid #eeeeee;
+}
+
+
+
+
+/* ## 個人資訊 左側區塊 選單 ## */
+ 
 .personal-menu .menu-list:not(:last-child) {
   border-bottom: 1px solid #eeeeee;
 }
@@ -278,9 +597,9 @@ li {
   background: #7ec5f1;
 }
 
-.menu-list .disabled a {
+.personal-menu .disabled a{
   pointer-events: none;
-  color: #dddddd;
+  color: #dddddd !important;
 }
 
 /* #### 所有課程 左側分類 ####*/
@@ -415,6 +734,10 @@ li {
 /* } */
 
 /* accordion 樣式 */
+.accordion .box {
+  padding: 0.5rem;
+  margin: 2rem 0;
+}
 
 .accordion-button:not(.collapsed) {
   color: black;
@@ -422,10 +745,14 @@ li {
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 
-
-.accordion-button {
-  display: block;
+.accordion-button h2{
+  width: 100%;
+  text-align: center;
 }
+
+/* .accordion-button { */
+  /* display: block; */
+/* } */
 
 /* #### 影片縮略圖 ####*/
 .video-container {

@@ -23,48 +23,113 @@
 
   <body>
     <header id="page-header-wrapper">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid" style="">
-          <a class="navbar-brand" href="./index.html">氣象預報培訓平台</a>
+          <a class="navbar-brand" href="./index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" alt="氣象預報培訓平台" height="48px">
+			  <image xlink:href="./image/cwa_logo_交通部中央氣象署-01.svg" width="100%" height="100%"></image>
+			</svg>
+		  </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#VOD-Navbar" aria-controls="VOD-Navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse ps-4" id="VOD-Navbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse" id="VOD-Navbar">
+            <ul id="navbar-menu" class="navbar-nav navbar-menu me-auto">
               <li class="nav-item">
                 <a class="nav-link" href="./index.html">首頁</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./user-info.html">個人資訊</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./allcourses.html">所有課程</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./program.html">微學程</a>
+                <a class="nav-link active" href="./program.html">微學程</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./aboutus.html">關於我們</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./relatedlinks.html">相關連結</a>
+                <a class="nav-link" aria-current="page" href="./relatedlinks.html">相關連結</a>
               </li>
             </ul>
-            <form class="navbar-form navbar-right" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
-              <div class="input-group">
-                <input name="keyword" type="text" class="form-control search-query" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
-                <div class="input-group-btn">
-                  <button class="btn btn-light" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                  </button>
+            <ul id="nav-icons" class="navbar-nav navbar-right">
+              <li id="search-icon" class="nav-item">
+                <form class="" action="https://metet.cwa.gov.tw/local/mooccourse/allcourses.php" method="GET" abineguid="0069C364388B47E09AEE88A3A3D1624C">
+                  <div id="search-group" class="input-group">
+                    <div id="search-query" class="search-query">
+                      <input id="search-input" name="keyword" type="text" class="form-control" x-webkit-speech="" lang="zh-TW" placeholder="搜尋">
+                      <a id="search-btn-close" class="btn btn-close" data-action="closesearch" data-toggle="collapse" href="#searchform-navbar" role="button" aria-expanded="true">
+                      </a>
+                    </div>
+                    <div class="input-group-btn">
+                      <a id="search-btn" class="btn nav-link" type="submit">
+                        <i class="bi bi-search"></i>
+                        <div class="nav-link-label">課程搜尋</div>
+                      </a>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li id="language-icon" class="nav-item">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <a id="language-btn" class="btn nav-link">
+                      <i class="bi bi-globe2"></i>
+                      <div class="nav-link-label">語言切換</div>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </form>
-            <form action="https://metet.cwa.gov.tw/login/index.php" method="post">
-              <button id="login-button" type="submit" class="btn btn-danger" style="margin-left:20px">登入</button>
-            </form>
+              </li>
+              <li id="notification-icon" class="nav-item">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <a id="notification-btn" class="btn nav-link">
+                      <i class="bi bi-bell-fill"></i>
+                      <div class="nav-link-label">網站通知</div>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li id="user-icon" class="nav-item" style="position:relative;">
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <a id="user-btn" class="btn nav-link">
+                      <i class="bi bi-person-circle"></i>
+                      <!-- <img src="https://metet.cwa.gov.tw/pluginfile.php/1564/user/icon/adaptable/f1?rev=141484" width="18" height="18" title="雲寶" alt="" style="border-radius:50%"> -->
+                    </a>
+                  </div>
+                </div>
+                <div id="user-box">
+                  <div>
+                    <ul class="navbar-nav navbar-menu user-list">
+                      <li class="nav-item">
+                        <a class="nav-link" href="./user-info.html">個人資訊</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./user-course.html">我選修的課程</a>
+                      </li>
+                      <li class="nav-item disabled">
+                        <a class="nav-link" href="./user-teach.html">我授課的課程</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./user-programs.html">我選修的微學程</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./user-stats.html">修課綜覽</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./user-preferences.html">偏好設定</a>
+                      </li>
+                    </ul>
+                    <div class="user-button">
+                      <a href="#" class="btn btn-primary" style="width: 100%;">登出</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div id="user-button" class="user-button">
+              <a href="#" class="btn btn-primary" style="width: 100%;">登出</a>
+            </div>
           </div>
         </div>
       </nav>
@@ -159,6 +224,8 @@
         </div>
       </div>
     </footer>
+    <!-- 自訂義 JS -->
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 
 </html>
