@@ -1,5 +1,5 @@
 // 取得搜尋按鈕相關元素
-const searchIcon = document.getElementById('search-icon');
+const searchGroup = document.getElementById('search-group');
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 const searchBtnClose = document.getElementById('search-btn-close');
@@ -11,11 +11,11 @@ searchBtn.addEventListener('click', function() {
      window.location.href = "./allcourses.html?keyword=" + searchInput.value;
    } else {
      // 新增 "active" 類別
-     searchIcon.classList.add('active');
+     searchGroup.classList.add('active');
    }
 });
 
 // 給 #searchBtnClose 按鈕添加點擊事件
 searchBtnClose.addEventListener('click', function() {
-  searchIcon.classList.remove('active');
+  searchGroup.classList.remove('active');
 });
